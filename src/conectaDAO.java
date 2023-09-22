@@ -22,7 +22,8 @@ public class conectaDAO {
         
         try {
         
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/uc11?user=root&password=Marica31.");
+            //conn = DriverManager.getConnection("jdbc:mysql://localhost/uc11?user=root&password=Marica31.");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/uc11?useTimezone=true&serverTimezone=UTC&useSSL=false", "root", "Marica31.");
             
         } catch (SQLException erro){
             JOptionPane.showMessageDialog(null, "Erro ConectaDAO" + erro.getMessage());
@@ -31,3 +32,4 @@ public class conectaDAO {
     }
     
 }
+
