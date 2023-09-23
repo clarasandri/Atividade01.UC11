@@ -79,6 +79,10 @@ public class ProdutosDAO {
         //acessa o banco de dados e muda o status pra "vendido"
     }
     
+    void listarProdutosVendidos(int idProduto){
+        
+    }
+    
     
     
         
