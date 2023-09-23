@@ -8,6 +8,7 @@
  * @author Adm
  */
 
+import java.awt.List;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
@@ -27,6 +28,8 @@ public class ProdutosDAO {
         int status;
         conn = new conectaDAO().connectDB(); 
         try{
+            
+            
             prep = conn.prepareStatement ("INSERT INTO produtos VALUES (?,?,?,?)");
             
             prep.setInt(1, produto.getId());
@@ -47,7 +50,28 @@ public class ProdutosDAO {
     
     public ArrayList<ProdutosDTO> listarProdutos(){
         
-        return listagem;
+        PreparedStatement st1;
+        ResultSet rs1;
+        try{
+            ArrayList<ProdutosDTO> listaProdutos = new ArrayList<>();
+            while(rs1.next()){
+                ProdutosDTO produto = new ProdutosDTO();
+                
+                produto.setId(ResultSet.getInt("id"));
+                produto.setNome(ResultSet.getString("nome"));
+                produto.setValor(ResultSet.getInt("valor"));
+                produto.setStatus(ResultSet.getString("status"));
+                
+                listaProdutos.add(produto);
+            }
+            return listaProdutos;
+        }
+        catch(Exception e){
+            return null
+        }
+
+        
+        //return listagem;
     }
     
     
