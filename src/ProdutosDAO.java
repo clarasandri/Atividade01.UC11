@@ -73,6 +73,15 @@ public class ProdutosDAO {
         
         //return listagem;
     }
+
+    void venderProduto(int parseInt) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        //acessa o banco de dados e muda o status pra "vendido"
+    }
+    
+    void listarProdutosVendidos(int idProduto){
+        
+    }
     
     
     
